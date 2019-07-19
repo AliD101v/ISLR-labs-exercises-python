@@ -13,7 +13,7 @@ Just run the scripts using your favorite IDE, or, on the command line, browse to
 python SCRIPT_NAME
 ```
 
-The scripts actually contain Jupyter-like code cells, which can be interactively run inside Visual Studio Code with the appropriate setup. Refer to [this guide](https://code.visualstudio.com/docs/python/jupyter-support) for more information on how to do so. After setting up the environment, you can also [export a Jupyter notebook](https://code.visualstudio.com/docs/python/jupyter-support#_export-a-jupyter-notebook).
+The scripts actually contain Jupyter-like code cells, which can be interactively run inside Visual Studio Code with the appropriate setup. Refer to [this guide](https://code.visualstudio.com/docs/python/jupyter-support) for more information on how to do so. After setting up the environment, you can also [export a Jupyter notebook](https://code.visualstudio.com/docs/python/jupyter-support#_export-a-jupyter-notebook). I export a Jupyter notebook file every time I update an accompanying script, but they may get a commit or two behind.
 
 ## Contributing
 Pull requests in in the form of improvements, alternate solutions, or error fixes are welcome. For major changes, please open an issue first to discuss what you would like to change.
