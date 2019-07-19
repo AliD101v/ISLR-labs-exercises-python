@@ -29,3 +29,10 @@ import numpy as np
 x2 = np.array([1, 6, 2])
 y2 = np.array([1, 4, 3])
 print(x2 + y2)
+
+#%% [markdown]
+#### List all the variables
+def printvars():
+   tmp = globals().copy()
+   [print(k,'  :  ',v,' type:' , type(v)) for k,v in tmp.items() if not k.startswith('_') and k!='tmp' and k!='In' and k!='Out' and not hasattr(v, '__call__')]
+printvars()
