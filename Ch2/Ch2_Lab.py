@@ -1,6 +1,6 @@
 #%% [markdown]
 ## Chapter 2 Lab: Introduction to R (now in Python!)
-# Please note that, the purpose of this file is *not* to demonstrate Python's basic functionalities (there are much more comprehensive guides, [like this](https://learnxinyminutes.com/docs/python3/)) but to mirror ISLR's lab in R.
+# Please note that, the purpose of this file is *not* to demonstrate Python's basic functionalities (there are much more comprehensive guides, [like this](https://learnxinyminutes.com/docs/python3/)) but to mirror ISLR's lab in R as much as possible.
 ### Basic Commands
 x = [1, 3, 2, 5]
 print(x)
@@ -46,3 +46,16 @@ print(x)
 #### Delete a variable (its reference)
 del y
 print(y)
+#%% [markdown]
+#### Delete all varialbes ([source](https://stackoverflow.com/a/53415612/4173146))
+for name in dir():
+    if not name.startswith('_'):
+        del globals()[name]
+
+for name in dir():
+    if not name.startswith('_'):
+        del locals()[name]
+print(x2)
+print(y2)
+#%% [markdown]
+#### or simply restart the interpreter.
