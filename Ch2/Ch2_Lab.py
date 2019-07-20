@@ -1,5 +1,6 @@
 #%% [markdown]
 ## Chapter 2 Lab: Introduction to R (now in Python!)
+# Please note that, the purpose of this file is *not* to demonstrate Python's basic functionalities (there are much more comprehensive guides, [like this](https://learnxinyminutes.com/docs/python3/)) but to mirror ISLR's lab in R.
 ### Basic Commands
 x = [1, 3, 2, 5]
 print(x)
@@ -36,3 +37,12 @@ def printvars():
    tmp = globals().copy()
    [print(k,'  :  ',v,' type:' , type(v)) for k,v in tmp.items() if not k.startswith('_') and k!='tmp' and k!='In' and k!='Out' and not hasattr(v, '__call__')]
 printvars()
+
+#%% [markdown]
+#### Clear a variable's content
+x = None
+print(x)
+#%% [markdown]
+#### Delete a variable (its reference)
+del y
+print(y)
