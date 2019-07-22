@@ -58,4 +58,22 @@ for name in dir():
 print(x2)
 print(y2)
 #%% [markdown]
-#### or simply restart the interpreter.
+# or simply restart the interpreter.
+
+#%% [markdown]
+#### Declare matrices ([source](https://stackoverflow.com/questions/6667201/how-to-define-a-two-dimensional-array-in-python))
+##### Pure Python
+rowCount = 4
+colCount = 3
+mat = [[0 for x in range(colCount)] for x in range(rowCount)]
+print(mat)
+#%% [markdown]
+# or a shorter version:
+mat = [[0] * colCount for i in range(rowCount)]
+print(mat)
+
+#%% [markdown]
+# However, it is best to use numpy arrays to represent matrices.
+import numpy
+mat = numpy.zeros((rowCount, colCount))
+print(mat)
