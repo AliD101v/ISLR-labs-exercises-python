@@ -77,3 +77,10 @@ print(mat)
 import numpy
 mat = numpy.zeros((rowCount, colCount))
 print(mat)
+
+#%% [markdown]
+#### The sqaure root of each element of a vector or matrix (numpy array)
+import numpy as np
+mat = [[16] * colCount for i in range(rowCount)]
+mat = np.asarray(mat)
+print(np.sqrt(mat))
