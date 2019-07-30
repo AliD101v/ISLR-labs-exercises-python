@@ -84,3 +84,24 @@ import numpy as np
 mat = [[16] * colCount for i in range(rowCount)]
 mat = np.asarray(mat)
 print(np.sqrt(mat))
+
+#%% [markdown]
+#### Generate a vector of random normal variables
+# Dimensions are provided as arguements to the numpy function. 
+# 
+# For random samples from a Normal distribution with mean *mu* and standard deviation *sigma*, use:
+# `sigma * np.random.randn(...) + mu` according to the [documentation](https://docs.scipy.org/doc/numpy-1.16.0/reference/generated/numpy.random.randn.html#numpy.random.randn)
+import numpy as np
+x = np.random.randn(50)
+y = x + ( 0.1 * np.random.randn(50) + 50 )
+#%% [markdown]
+# To compute the [Pearson correlation coefficient](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient), or simply correlation, between the two vectors:
+print(np.corrcoef(x, y))
+
+#%% [markdown]
+# To set the seed for random number generation, in Python:
+import random
+random.seed(0)
+#%% [markdown]
+# Or in numpy:
+np.random.seed(0)
