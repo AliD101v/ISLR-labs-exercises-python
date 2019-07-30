@@ -105,3 +105,14 @@ random.seed(0)
 #%% [markdown]
 # Or in numpy:
 np.random.seed(0)
+x = np.random.randn(50)
+y = x + ( 0.1 * np.random.randn(50) + 50 )
+
+#%% [markdown]
+#### To compute the mean, variance, and standard deviation of a vector of numbers:
+print(np.mean(x))
+print(np.var(x))
+print(np.std(x))
+print(np.mean(y))
+print(np.var(y))
+print(np.std(y))
