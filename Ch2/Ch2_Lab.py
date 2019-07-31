@@ -116,3 +116,23 @@ print(np.std(x))
 print(np.mean(y))
 print(np.var(y))
 print(np.std(y))
+
+#%% [markdown]
+### Graphics
+import numpy as np
+import matplotlib.pyplot as plt
+np.random.seed(0)
+x = np.random.randn(100)
+y = np.random.randn(100)
+
+fig, ax = plt.subplots()
+ax.scatter(x, y)
+plt.show()
+
+fig, ax = plt.subplots()
+ax.set_xlabel(r'this is the x-axis')
+ax.set_ylabel(r'this is the y-axis')
+ax.set_title('Plot of X vs Y')
+ax.grid(True)
+fig.tight_layout()
+ax.scatter(x, y)
