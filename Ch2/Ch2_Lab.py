@@ -119,6 +119,7 @@ print(np.std(y))
 
 #%% [markdown]
 ### Graphics
+#### Using matplotlib
 import numpy as np
 import matplotlib.pyplot as plt
 np.random.seed(0)
@@ -136,3 +137,29 @@ ax.set_title('Plot of X vs Y')
 ax.grid(True)
 fig.tight_layout()
 ax.scatter(x, y)
+
+#%% [markdown]
+#### Using Seaborn
+import seaborn as sns
+fig, ax = plt.subplots()
+ax.set_xlabel(r'this is the x-axis')
+ax.set_ylabel(r'this is the y-axis')
+ax.set_title('Plot of X vs Y')
+ax.grid(True)
+fig.tight_layout()
+sns.scatterplot(x, y)
+
+#%% [markdown]
+#### Using Plotly
+import plotly.graph_objects as go
+fig = go.Figure(data=go.Scatter(x=x, y=y, mode='markers'))
+fig.show()
+
+#%% [markdown]
+#### Using Bokeh
+from bokeh.plotting import figure as bkfig, show as bkshow
+fig = bkfig(title="Plot of X vs Y", tools='pan,wheel_zoom,box_zoom,reset,hover,crosshair', active_inspect='hover')
+fig.circle(x=x, y=y)
+fig.xaxis.axis_label = 'this is the x-axis'
+fig.yaxis.axis_label = 'this is the y-axis'
+bkshow(fig)
