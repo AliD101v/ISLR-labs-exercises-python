@@ -169,3 +169,19 @@ fig.xaxis.axis_label = 'this is the x-axis'
 fig.yaxis.axis_label = 'this is the y-axis'
 bkshow(fig)
 
+#%% [markdown]
+#### Generating a sequence or range of numbers
+# In pure Python, use `range(lower, upper, step)`:
+# The following will generate a sequence of integers 1,...,10
+x = range(1, 11)
+for i in x:
+        print(i)
+#%% [markdown]
+# To use non-decimal steps, or specify the number of elements to return, use the `linspace()` function in NumPy:
+x = np.linspace(1, 10, 20)
+print(x)
+# Note that the PI constant in all of Python's math module, NumPy, and SciPy are the same.
+x = np.linspace(-np.pi, np.pi, 50)
+print(x)
+
+#%%
