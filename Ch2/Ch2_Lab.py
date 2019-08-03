@@ -137,6 +137,11 @@ ax.set_title('Plot of X vs Y')
 ax.grid(True)
 fig.tight_layout()
 ax.scatter(x, y)
+#%% [markdown]
+##### Save the plot to a file
+fig.savefig('sample.png')
+# remove the whitespace around the image
+fig.savefig('sample.pdf', bbox_inches='tight')
 
 #%% [markdown]
 #### Using Seaborn
@@ -163,3 +168,4 @@ fig.circle(x=x, y=y)
 fig.xaxis.axis_label = 'this is the x-axis'
 fig.yaxis.axis_label = 'this is the y-axis'
 bkshow(fig)
+
