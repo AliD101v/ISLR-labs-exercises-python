@@ -250,4 +250,17 @@ cset = ax.contourf(X, Y, Z2, zdir='z', offset=ax.get_zlim()[0], cmap=cm.plasma, 
 # cset = ax.contourf(X, Y, Z2, zdir='y', offset=ax.get_ylim()[1], cmap=cm.plasma, alpha=0.8)
 plt.show()
 
+#%% [markdown]
+# Vary the viewing angle
+for elev in [20, 70, 40]:
+        fig = plt.figure()
+        ax = fig.gca(projection='3d')
+        surf = ax.plot_surface(X, Y, Z2, cmap=cm.terrain, alpha=0.8)
+        fig.colorbar(surf)
+        cset = ax.contourf(X, Y, Z2, zdir='z', offset=ax.get_zlim()[0], cmap=cm.plasma, alpha=0.8)
+        ax.azim = 30
+        ax.elev = elev
+
+        plt.show()
+
 #%%
