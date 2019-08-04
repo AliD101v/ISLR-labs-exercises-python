@@ -185,7 +185,7 @@ x = np.linspace(-np.pi, np.pi, 50)
 print(x)
 
 #%% [markdown]
-#### Countour plotting
+#### Contour plotting
 import matplotlib
 import numpy as np
 import matplotlib.cm as cm
@@ -210,3 +210,11 @@ Z2 = ( Z - Z.T ) / 2
 fig, ax = plt.subplots()
 CS = ax.contour(X, Y, Z2, 15)
 ax.clabel(CS, inline=1, fontsize=4)
+
+#%% [markdown]
+#### Filled contour (heatmap)
+# Note: run the previous cell first.
+fig, ax = plt.subplots(constrained_layout=True)
+CS = ax.contourf(X, Y, Z2, 15, cmap=plt.cm.plasma)
+
+#%%
