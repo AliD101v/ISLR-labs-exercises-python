@@ -184,4 +184,29 @@ print(x)
 x = np.linspace(-np.pi, np.pi, 50)
 print(x)
 
-#%%
+#%% [markdown]
+#### Countour plotting
+import matplotlib
+import numpy as np
+import matplotlib.cm as cm
+import matplotlib.pyplot as plt
+
+
+x = np.linspace(-np.pi, np.pi, 50)
+y = x
+X, Y = np.meshgrid(x, y)
+# [source](https://stackoverflow.com/a/45496154/4173146)
+Z = np.cos(y) / (1 + x[:, None]**2)
+
+fig, ax = plt.subplots()
+CS = ax.contour(X, Y, Z)
+ax.clabel(CS, inline=1, fontsize=4)
+
+# fig, ax = plt.subplots()
+CS = ax.contour(X, Y, Z, 45)
+ax.clabel(CS, inline=1, fontsize=4)
+
+Z2 = ( Z - Z.T ) / 2
+fig, ax = plt.subplots()
+CS = ax.contour(X, Y, Z2, 15)
+ax.clabel(CS, inline=1, fontsize=4)
