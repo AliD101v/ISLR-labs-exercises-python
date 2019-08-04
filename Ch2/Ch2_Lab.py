@@ -202,7 +202,6 @@ fig, ax = plt.subplots()
 CS = ax.contour(X, Y, Z)
 ax.clabel(CS, inline=1, fontsize=4)
 
-# fig, ax = plt.subplots()
 CS = ax.contour(X, Y, Z, 45)
 ax.clabel(CS, inline=1, fontsize=4)
 
@@ -215,6 +214,7 @@ ax.clabel(CS, inline=1, fontsize=4)
 #### Filled contour (heatmap)
 # Note: run the previous cell first.
 fig, ax = plt.subplots(constrained_layout=True)
-CS = ax.contourf(X, Y, Z2, 15, cmap=plt.cm.plasma)
+ax.contourf(X, Y, Z2, 15, cmap=plt.cm.plasma)
+cbar = fig.colorbar(CS)
 
 #%%
