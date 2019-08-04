@@ -214,7 +214,40 @@ ax.clabel(CS, inline=1, fontsize=4)
 #### Filled contour (heatmap)
 # Note: run the previous cell first.
 fig, ax = plt.subplots(constrained_layout=True)
-ax.contourf(X, Y, Z2, 15, cmap=plt.cm.plasma)
+CS = ax.contourf(X, Y, Z2, 15, cmap=plt.cm.plasma)
 cbar = fig.colorbar(CS)
+
+#%% [markdown]
+#### 3D contour plots
+# 3D wireframe plot
+from mpl_toolkits.mplot3d import axes3d
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_wireframe(X, Y, Z2)
+plt.show()
+
+#%% [markdown]
+# 3D surface (color map)
+from matplotlib.ticker import LinearLocator, FormatStrFormatter
+fig = plt.figure()
+ax = fig.gca(projection='3d')
+surf = ax.plot_surface(X, Y, Z2, cmap=cm.terrain)
+fig.colorbar(surf)
+plt.show()
+
+#%% [markdown]
+# Project filled contour 'profiles' onto the 'walls' of the graph
+from matplotlib.ticker import LinearLocator, FormatStrFormatter
+fig = plt.figure()
+ax = fig.gca(projection='3d')
+surf = ax.plot_surface(X, Y, Z2, cmap=cm.terrain, alpha=0.8)
+fig.colorbar(surf)
+# Plot projections of the contours for each dimension.  By choosing offsets
+# that match the appropriate axes limits, the projected contours will sit on
+# the 'walls' of the graph (from the [matplotlib documentation](https://matplotlib.org/3.1.1/gallery/mplot3d/contourf3d_2.html#sphx-glr-gallery-mplot3d-contourf3d-2-py))
+cset = ax.contourf(X, Y, Z2, zdir='z', offset=ax.get_zlim()[0], cmap=cm.plasma, alpha=0.8)
+# cset = ax.contourf(X, Y, Z2, zdir='x', offset=ax.get_xlim()[0], cmap=cm.plasma, alpha=0.8)
+# cset = ax.contourf(X, Y, Z2, zdir='y', offset=ax.get_ylim()[1], cmap=cm.plasma, alpha=0.8)
+plt.show()
 
 #%%
