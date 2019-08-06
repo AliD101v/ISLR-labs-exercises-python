@@ -263,4 +263,28 @@ for elev in [20, 70, 40]:
 
         plt.show()
 
-#%%
+#%% [markdown]
+### Indexing Data
+import numpy as np
+A = np.array(np.arange(1, 17, 1)).reshape(4, 4).T
+print(A)
+# Python's arrays are zero-indexed
+print(A[1, 2])
+#%% [markdown]
+#### Select multiple rows and columns
+print(np.array([A[0,1], A[0,3], A[2,1], A[2,3]]).reshape(2,2))
+print(A[:3, 1:4])
+print(A[:2, :])
+print(A[:, :2])
+print(A[0])
+#%% [markdown]
+#### Keep all rows or columns except those indicated in the index
+# To exclude whole rows or columns, use a boolean mask.
+mask = np.ones(len(A), dtype=bool)
+# Set the excluded indices to False
+mask[[0,2]] = False
+# Use the boolean/logical mask to index into the array
+print(A[mask,...])
+#%% [markdown]
+# Get the dimensions of the array (matrix)
+print(A.shape)
