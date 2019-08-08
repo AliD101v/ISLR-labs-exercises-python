@@ -288,3 +288,31 @@ print(A[mask,...])
 #%% [markdown]
 # Get the dimensions of the array (matrix)
 print(A.shape)
+
+#%% [markdown]
+### Loading Data
+# We will use pandas to load and read the data
+import pandas as pd
+# Edit the path on your platform to correctly point to the file
+df = pd.read_csv('Datasets\Auto.csv')
+df.head()
+
+#%% [markdown]
+# Pass `'?'` as a NaN string
+df = pd.read_csv('Datasets\Auto.csv', na_values='?')
+df.head()
+print(df.shape)
+print(df.iloc[10:20,:])
+# Find and display only rows with NaN's
+df1 = df[df.isna().any(axis=1)]
+df1.head()
+print(df1.shape)
+
+#%% [markdown]
+# Drop the NaN values
+df = df.dropna()
+print(df.shape)
+
+#%% [markdown]
+# Get a list of column names in the DataFrame
+print(list(df))
