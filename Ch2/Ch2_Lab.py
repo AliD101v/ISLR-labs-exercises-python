@@ -327,3 +327,13 @@ df.plot.scatter(x='cylinders', y='mpg')
 df_cat = df.pivot(columns='cylinders', values='mpg')
 df_cat.plot.box()
 df_cat.plot.box(vert=False)
+
+#%% [markdown]
+# Plot a histogram
+df.hist(column='mpg')
+df.hist(column='mpg', bins=15)
+
+#%% [markdown]
+# Plot a scatterplot matrix
+from pandas.plotting import scatter_matrix
+scatter_matrix(df[['mpg', 'displacement', 'horsepower', 'weight', 'acceleration']], diagonal='kde')
