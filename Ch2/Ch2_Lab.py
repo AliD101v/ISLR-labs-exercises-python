@@ -354,3 +354,12 @@ df.describe()
 #%% [markdown]
 # Include only a subset of variables
 df['mpg'].describe()
+
+#%% [markdown]
+#### Serialization - save or load the current session
+import dill
+filename = 'globalsave.pkl'
+dill.dump_session(filename)
+
+# and to load the session again:
+dill.load_session(filename)
