@@ -316,3 +316,14 @@ print(df.shape)
 #%% [markdown]
 # Get a list of column names in the DataFrame
 print(list(df))
+
+#%% [markdown]
+### Additional Graphical and Numerical Summaries
+# Scatterplots of the quantitative variables
+df.plot.scatter(x='cylinders', y='mpg')
+
+#%% [markdown]
+# Boxplots, which are more suitable if the variable on the x-axis is categorical.
+df_cat = df.pivot(columns='cylinders', values='mpg')
+df_cat.plot.box()
+df_cat.plot.box(vert=False)
