@@ -337,3 +337,11 @@ df.hist(column='mpg', bins=15)
 # Plot a scatterplot matrix
 from pandas.plotting import scatter_matrix
 scatter_matrix(df[['mpg', 'displacement', 'horsepower', 'weight', 'acceleration']], diagonal='kde')
+
+#%% [markdown]
+# Plot the scatterplot, with custom variable values on mouse hover (using Plotly)
+# Marker color and size can also be set to variables.
+import plotly.graph_objects as go
+fig = go.Figure(data=go.Scatter(x=df['horsepower'], y=df['mpg'], mode='markers', text=df['name']))
+fig.update_layout(xaxis=go.layout.XAxis(title=go.layout.xaxis.Title(text='Horsepower')), yaxis=go.layout.YAxis(title=go.layout.yaxis.Title(text='MPG')))
+fig.show()
