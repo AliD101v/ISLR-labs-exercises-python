@@ -345,3 +345,12 @@ import plotly.graph_objects as go
 fig = go.Figure(data=go.Scatter(x=df['horsepower'], y=df['mpg'], mode='markers', text=df['name']))
 fig.update_layout(xaxis=go.layout.XAxis(title=go.layout.xaxis.Title(text='Horsepower')), yaxis=go.layout.YAxis(title=go.layout.yaxis.Title(text='MPG')))
 fig.show()
+
+#%% [markdown]
+#### Descriptive statistics
+# Include all variables
+df.describe()
+
+#%% [markdown]
+# Include only a subset of variables
+df['mpg'].describe()
