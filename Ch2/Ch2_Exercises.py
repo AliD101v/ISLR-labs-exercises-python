@@ -35,3 +35,16 @@ df_cat.plot.box()
 #%%
 # v.
 df.hist(column=['Room.Board', 'Books', 'Personal', 'Expend'], bins=25, figsize=(6, 4))
+
+#%% [markdown]
+### Q9
+from IPython.core.display import display
+df = pd.read_csv('Datasets\Auto.csv')
+#%% [markdown]
+#### Part (a)
+df_predictors = df.dtypes
+df_predictors = pd.DataFrame(list(df))
+df_predictors.rename(columns={df_predictors.columns.values[0]: 'Predictor Name'}, inplace=True)
+df_predictors['dtypes'] = df.dtypes.tolist()
+df_predictors['Quantitative or Qualitative'] = np.where(df_predictors['dtypes'] == np.dtype('object'), 'Qualitative', 'Quantitative')
+display(df_predictors.iloc[:,[0,2]])
