@@ -107,4 +107,8 @@ df_predictors['dtypes'] = df.dtypes.tolist()
 df_predictors['Quantitative or Qualitative'] = np.where(df_predictors['dtypes'] == np.dtype('object'), 'Qualitative', 'Quantitative')
 display(df_predictors.iloc[:,[0,2]])
 
+#%% [markdown]
+#### Part (b)
+df.describe()
+
 #%%
