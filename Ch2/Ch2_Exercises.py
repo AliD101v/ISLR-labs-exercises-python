@@ -47,7 +47,7 @@ df.hist(column=['Room.Board', 'Books', 'Personal', 'Expend'], bins=25, figsize=(
 # 
 # We will create a matrix of correlation coeeficients for every pair of variables.
 # 
-# First, filter out the qualitative variables.
+# First, filter out the qualitative variables (using boolean indexing).
 quant_var_names = pd.DataFrame(list(df))
 quant_var_names.rename(columns={quant_var_names.columns.values[0]: 'Variable Name'}, inplace=True)
 quant_var_names['dtypes'] = df.dtypes.tolist()
@@ -111,4 +111,11 @@ display(df_predictors.iloc[:,[0,2]])
 #### Part (b)
 df.describe()
 
-#%%
+#%% [markdown]
+#### Part (c)
+# We can either append the included ranges,
+df_sliced = df.iloc[:9,:].append(df.iloc[85:, :])
+#%% [markdown]
+# or drop the excluded ranges
+df_sliced = df.drop([i for i in range(9,85)])
+df_sliced.describe()
