@@ -119,3 +119,21 @@ df_sliced = df.iloc[:9,:].append(df.iloc[85:, :])
 # or drop the excluded ranges
 df_sliced = df.drop([i for i in range(9,85)])
 df_sliced.describe()
+
+#%% [markdown]
+#### Part (d)
+# First, filter out the qualitative variables (using boolean indexing).
+quant_var_names = pd.DataFrame(list(df))
+quant_var_names.rename(columns={quant_var_names.columns.values[0]: 'Variable Name'}, inplace=True)
+quant_var_names['dtypes'] = df.dtypes.tolist()
+quant_var_names = quant_var_names[quant_var_names['dtypes'] != np.dtype('object')].iloc[:,0]
+
+#%% [markdown]
+# Then, create the scatterplot matrix for these quantitative variables.
+scatter_matrix(df[list(quant_var_names)], diagonal='kde')
+
+
+#%%
+# todo compute the correlation coefficients of the variable pairs that look linear on the scatterplot matrix
+# todo create single scatterplot of these variables
+# todo create boxplots of qualitative variables
